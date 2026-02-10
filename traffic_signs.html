@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GTSRB Traffic Sign Guide</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f0f2f5;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .img-container {
+            height: 160px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+        }
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .id {
+            background: #333;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.8em;
+        }
+
+        .name {
+            display: block;
+            margin-top: 8px;
+            font-weight: 600;
+            color: #444;
+            font-size: 0.9em;
+        }
+
+        .tip {
+            margin-top: 20px;
+            padding: 15px;
+            background: #e3f2fd;
+            border-radius: 8px;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>🛑 GTSRB Traffic Sign Reference (Extracted Samples)</h1>
+
+    <div class="tip">
+        <strong>Tip:</strong> These are <strong>actual samples</strong> from your training dataset.
+        <br>Right-click any image and "Save image as..." to download a sample for testing.
+    </div>
+    <br><br>
+
+    <div class="grid">
+        <!-- 0 -->
+        <div class="card">
+            <div class="img-container"><img src="sample_signs/00_Speed_limit_20kmh.png"></div><span class="id">ID:
+                0</span><span class="name">Speed limit (20km/h)</span>
+        </div>
+        <!-- 1 -->
+        <div class="card">
+            <div class="img-container"><img src="sample_signs/01_Speed_limit_30kmh.png"></div><span class="id">ID:
+                1</span><span class="name">Speed limit (30km/h)</span>
+        </div>
+        <!-- 2 -->
+        <div class="card">
+            <div class="img-container"><img src="sample_signs/02_Speed_limit_50kmh.png"></div><span class="id">ID:
+                2</span><span class="name">Speed limit (50km/h)</span>
+        </div>
+        <!-- 3 -->
+        <div class="card">
+            <div class="img-container"><img src="sample_signs/03_Speed_limit_60kmh.png"></div><span class="id">ID:
+                3</span><span class="name">Speed limit (60km/h)</span>
+        </div>
+        <!-- 4 -->
+        <div class="card">
+            <div class="img-container"><img src="sample_signs/04_Speed_limit_70kmh.png"></div><span class="id">ID:
+                4</span><span class="name">Speed limit (70km/h)</span>
+        </div>
+        <!-- 5 -->
+        <div class="card">
+            <div class="img-container"><img src="sample_signs/05_Speed_limit_80kmh.png"></div><span class="id">ID:
+                5</span><span class="name">Speed limit (80km/h)</span>
+        </div>
+        <!-- 6 -->
+        <div class="card">
+            <div class="img-container"><img src="sample_signs/06_End_speed_limit_80kmh.png"></div><span class="id">ID:
+                6</span><span class="name">End speed limit (80)</span>
+        </div>
+        <!-- 7 -->
+        <div class="card">
+            <div class="img-container"><img src="sample_signs/07_Speed_limit_100kmh.png"></div><span class="id">ID:
+                7</span><span class="name">Speed limit (100km/h)</span>
+        </div>
+        <!-- 8 -->
+        <div class="card">
+            <div class="img-container"><img src="sample_signs/08_Speed_limit_120kmh.png"></div><span class="id">ID:
+                8</span><span class="name">Speed limit (120km/h)</span>
+        </div>
+        <!-- 9 -->
+        <div class="card">
+            <div class="img-container"><img src="sample_signs/09_No_passing.png"></div><span class="id">ID:
+                9</span><span class="name">No passing</span>
+        </div>
+        <!-- 10 -->
+        <div class="card">
+            <div class="img-container"><img src="sample_signs/10_No_passing_over_3.5t.png"></div><span class="id">ID:
+                10</span><span class="name">No passing (3.5t)</span>
+        </div>
+        <!-- 11 -->
+        <div class="card">
+            <div class="img-container"><img src="sample_signs/11_Right_of_way.png"></div><span class="id">ID:
+                11</span><span class="name">Right-of-way</span>
+        </div>
+        <!-- 12 -->
+        <div class="card">
+            <div class="img-container"><img src="sample_signs/12_Priority_road.png"></div><span class="id">ID:
+                12</span><span class="name">Priority road</span>
+        </div>
+        <!-- 13 -->
+        <div class="card">
+            <div class="img-container"><img src="sample_signs/13_Yield.png"></div><span class="id">ID: 13</span><span
+                class="name">Yield</span>
+        </div>
+        <!-- 14 -->
+        <div class="card">
+            <div class="img-container"><img src="sample_signs/14_Stop.png"></div><span class="id">ID: 14</span><span
+                class="name">Stop</span>
+        </div>
+        <!-- 15 -->
+        <div class="card">
+            <div class="img-container"><img src="sample_signs/15_No_vehicles.png"></div><span class="id">ID:
+                15</span><span class="name">No vehicles</span>
+        </div>
+        <!-- 16 -->
+        <div class="card">
+            <div class="img-container"><img src="sample_signs/16_Vehicles_over_3.5t_prohibited.png"></div><span
+                class="id">ID: 16</span><span class="name">Vehicles >3.5t prohibited</span>
+        </div>
+        <!-- 17 -->
+        <div class="card">
+            <div class="img-container"><img src="sample_signs/17_No_entry.png"></div><span class="id">ID: 17</span><span
+                class="name">No entry</span>
+        </div>
+        <!-- 18 -->
+        <div class="card">
+            <div class="img-container"><img src="sample_signs/18_General_caution.png"></div><span class="id">ID:
+                18</span><span class="name">General caution</span>
+        </div>
+        <!-- 19 -->
+        <div class="card">
+            <div class="img-container"><img src="sample_signs/19_Dangerous_curve_left.png"></div><span class="id">ID:
+                19</span><span class="name">Dangerous curve left</span>
+        </div>
+        <!-- 20 -->
+        <div class="card">
+            <div class="img-container"><img src="sample_signs/20_Dangerous_curve_right.png"></div><span class="id">ID:
+                20</span><span class="name">Dangerous curve right</span>
+        </div>
+        <!-- 21 -->
+        <div class="card">
+            <div class="img-container"><img src="sample_signs/21_Double_curve.png"></div><span class="id">ID:
+                21</span><span class="name">Double curve</span>
+        </div>
+        <!-- 22 -->
+        <div class="card">
+            <div class="img-container"><img src="sample_signs/22_Bumpy_road.png"></div><span class="id">ID:
+                22</span><span class="name">Bumpy road</span>
+        </div>
+        <!-- 23 -->
+        <div class="card">
+            <div class="img-container"><img src="sample_signs/23_Slippery_road.png"></div><span class="id">ID:
+                23</span><span class="name">Slippery road</span>
+        </div>
+        <!-- 24 -->
+        <div class="card">
+            <div class="img-container"><img src="sample_signs/24_Road_narrows_right.png"></div><span class="id">ID:
+                24</span><span class="name">Road narrows</span>
+        </div>
+        <!-- 25 -->
+        <div class="card">
+            <div class="img-container"><img src="sample_signs/25_Road_work.png"></div><span class="id">ID:
+                25</span><span class="name">Road work</span>
+        </div>
+        <!-- 26 -->
+        <div class="card">
+            <div class="img-container"><img src="sample_signs/26_Traffic_signals.png"></div><span class="id">ID:
+                26</span><span class="name">Traffic signals</span>
+        </div>
+        <!-- 27 -->
+        <div class="card">
+            <div class="img-container"><img src="sample_signs/27_Pedestrians.png"></div><span class="id">ID:
+                27</span><span class="name">Pedestrians</span>
+        </div>
+        <!-- 28 -->
+        <div class="card">
+            <div class="img-container"><img src="sample_signs/28_Children_crossing.png"></div><span class="id">ID:
+                28</span><span class="name">Children crossing</span>
+        </div>
+        <!-- 29 -->
+        <div class="card">
+            <div class="img-container"><img src="sample_signs/29_Bicycles_crossing.png"></div><span class="id">ID:
+                29</span><span class="name">Bicycles crossing</span>
+        </div>
+        <!-- 30 -->
+        <div class="card">
+            <div class="img-container"><img src="sample_signs/30_Beware_ice_snow.png"></div><span class="id">ID:
+                30</span><span class="name">Beware ice/snow</span>
+        </div>
+        <!-- 31 -->
+        <div class="card">
+            <div class="img-container"><img src="sample_signs/31_Wild_animals_crossing.png"></div><span class="id">ID:
+                31</span><span class="name">Wild animals crossing</span>
+        </div>
+        <!-- 32 -->
+        <div class="card">
+            <div class="img-container"><img src="sample_signs/32_End_all_limits.png"></div><span class="id">ID:
+                32</span><span class="name">End all limits</span>
+        </div>
+        <!-- 33 -->
+        <div class="card">
+            <div class="img-container"><img src="sample_signs/33_Turn_right_ahead.png"></div><span class="id">ID:
+                33</span><span class="name">Turn right ahead</span>
+        </div>
+        <!-- 34 -->
+        <div class="card">
+            <div class="img-container"><img src="sample_signs/34_Turn_left_ahead.png"></div><span class="id">ID:
+                34</span><span class="name">Turn left ahead</span>
+        </div>
+        <!-- 35 -->
+        <div class="card">
+            <div class="img-container"><img src="sample_signs/35_Ahead_only.png"></div><span class="id">ID:
+                35</span><span class="name">Ahead only</span>
+        </div>
+        <!-- 36 -->
+        <div class="card">
+            <div class="img-container"><img src="sample_signs/36_Go_straight_or_right.png"></div><span class="id">ID:
+                36</span><span class="name">Go straight or right</span>
+        </div>
+        <!-- 37 -->
+        <div class="card">
+            <div class="img-container"><img src="sample_signs/37_Go_straight_or_left.png"></div><span class="id">ID:
+                37</span><span class="name">Go straight or left</span>
+        </div>
+        <!-- 38 -->
+        <div class="card">
+            <div class="img-container"><img src="sample_signs/38_Keep_right.png"></div><span class="id">ID:
+                38</span><span class="name">Keep right</span>
+        </div>
+        <!-- 39 -->
+        <div class="card">
+            <div class="img-container"><img src="sample_signs/39_Keep_left.png"></div><span class="id">ID:
+                39</span><span class="name">Keep left</span>
+        </div>
+        <!-- 40 -->
+        <div class="card">
+            <div class="img-container"><img src="sample_signs/40_Roundabout_mandatory.png"></div><span class="id">ID:
+                40</span><span class="name">Roundabout</span>
+        </div>
+        <!-- 41 -->
+        <div class="card">
+            <div class="img-container"><img src="sample_signs/41_End_no_passing.png"></div><span class="id">ID:
+                41</span><span class="name">End no passing</span>
+        </div>
+        <!-- 42 -->
+        <div class="card">
+            <div class="img-container"><img src="sample_signs/42_End_no_passing_3.5t.png"></div><span class="id">ID:
+                42</span><span class="name">End no passing (3.5t)</span>
+        </div>
+    </div>
+</body>
+
+</html>

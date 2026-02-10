@@ -1,0 +1,7 @@
+numpy>=1.23
+pandas>=2.0
+scikit-learn>=1.3
+tensorflow>=2.12,<3
+opencv-python>=4.8
+streamlit>=1.29
+tqdm>=4.66
