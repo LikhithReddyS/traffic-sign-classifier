@@ -23,3 +23,6 @@ dataset/**/*.png
 
 # Large binary docs
 *.pptx
+
+# Allow this specific deck to be versioned
+!Traffic-Sign-Recognition-System-GTSRB-using-CNN (1).pptx
