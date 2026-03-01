@@ -14,9 +14,63 @@ from utils.image_ops import preprocess_frame_for_model, preprocess_image
 from utils.labels import class_name
 
 
+# Handle Keras import for different TF versions (2.x vs Keras 3)
+try:
+    import keras
+except ImportError:
+    from tensorflow import keras
+
+
+# ...
+
 @st.cache_resource
-def load_model_cached(model_path: str) -> tf.keras.Model:
-    return tf.keras.models.load_model(model_path)
+def load_model_cached(model_path: str, model_mtime: float):
+    """Load a model in a way that survives Keras/TF version differences.
+
+    Preference order:
+    1) Load the full model (works for `.keras` and many `.h5` saves).
+    2) Fall back to rebuilding the architecture from source and loading weights.
+
+    `model_mtime` is only used to bust Streamlit cache when the file changes.
+    """
+    from cnn.model import build_cnn, build_cnn_legacy
+    from utils.config import NUM_CLASSES, IMG_SIZE
+
+    expected_input_shape = (None, IMG_SIZE, IMG_SIZE, 3)
+    expected_output_shape = (None, NUM_CLASSES)
+
+    # Attempt 1: load the full serialized model.
+    try:
+        model = keras.models.load_model(model_path, compile=False)
+        if tuple(model.input_shape) != expected_input_shape or tuple(model.output_shape) != expected_output_shape:
+            raise ValueError(
+                "Loaded model has unexpected shapes: "
+                f"input={model.input_shape}, output={model.output_shape}. "
+                f"Expected input={expected_input_shape}, output={expected_output_shape}."
+            )
+        return model
+    except Exception:
+        pass
+
+    # Attempt 2: rebuild and load weights only.
+    # First try the current architecture; if it doesn't match the saved weights,
+    # fall back to the legacy architecture (no BatchNorm).
+    for builder in (build_cnn, build_cnn_legacy):
+        model = builder(num_classes=NUM_CLASSES, img_size=IMG_SIZE)
+        try:
+            model.load_weights(model_path)
+            return model
+        except ValueError:
+            continue
+
+    raise ValueError(
+        "Failed to load model weights. The saved artifact does not match either the "
+        "current or legacy CNN architecture. Re-run training/conversion to regenerate "
+        "artifacts (e.g. `python -m cnn.train_cnn`) and ensure the app points to the "
+        "matching file in `artifacts/cnn/`."
+    )
+
+
 
 
 def _predict(model: tf.keras.Model, img_rgb_01: np.ndarray):
@@ -122,7 +176,7 @@ def main() -> None:
 
     st.title("Traffic Sign Recognition System")
     st.caption(
-        "GAN-based Data Augmentation + CNN · "
+        "CNN Traffic Sign Recognition System · "
         "Semantics-preserving augmentation (no rotation/flipping)"
     )
 
@@ -142,19 +196,31 @@ def main() -> None:
     project_root = Path(__file__).resolve().parent
     paths = Paths(project_root=project_root)
 
-    model_path = paths.cnn_dir / "model.keras"
+    # Preferred artifact order:
+    # 1) `model.weights.h5` (weights-only; best cross-version portability)
+    # 2) `model.h5`         (legacy weights-only in this repo)
+    # 3) `model.keras`      (full model; may be produced by newer Keras)
+    model_path = paths.cnn_dir / "model.weights.h5"
+    if not model_path.exists():
+        model_path = paths.cnn_dir / "model.h5"
+    if not model_path.exists():
+        model_path = paths.cnn_dir / "model.keras"
     metrics_path = paths.cnn_dir / "metrics.json"
 
     # ── Model loading ──────────────────────────────────────────────
     if not model_path.exists():
-        st.error(f"Model not found at: {model_path}. Train the CNN first (`python -m cnn.train_cnn`).")
+        st.error(
+            "Model not found in artifacts. Train the CNN first "
+            "(`python -m cnn.train_cnn`) to generate `artifacts/cnn/model.keras`."
+        )
         st.stop()
 
-    model = load_model_cached(str(model_path))
+    model = load_model_cached(str(model_path), model_path.stat().st_mtime)
 
     # ── Sidebar: Offline metrics ───────────────────────────────────
     with st.sidebar:
         st.subheader("📊 Offline Metrics")
+        st.caption(f"Model artifact: {model_path.name}")
         if metrics_path.exists():
             metrics = json.loads(metrics_path.read_text(encoding="utf-8"))
             st.metric("Accuracy", f"{metrics.get('accuracy', 0.0):.4f}")
@@ -218,7 +284,7 @@ def main() -> None:
             st.subheader("🖼️ Upload a Traffic Sign Image")
             uploaded = st.file_uploader(
                 "Choose an image...",
-                type=["jpg", "jpeg", "png", "bmp", "ppm"],
+                type=["jpg", "jpeg", "png", "bmp"],
             )
 
         with col2:

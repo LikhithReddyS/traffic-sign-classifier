@@ -22,16 +22,35 @@ def main():
         "tensorflow",
         "cv2", # opencv-python
         "streamlit",
-        "tqdm"
+        "tqdm",
+        "PIL" # Pillow
     ]
     
     all_deps_ok = True
     for dep in dependencies:
         if not check_import(dep):
             all_deps_ok = False
-            
+        else:
+            # Print version if available
+            try:
+                mod = importlib.import_module(dep)
+                version = getattr(mod, "__version__", "unknown")
+                print(f"  - {dep} version: {version}")
+            except Exception:
+                pass
+
     if all_deps_ok:
         print("\nAll dependencies installed.")
+        # Extra check for tf.keras
+        try:
+            import tensorflow as tf
+            if not hasattr(tf, "keras"):
+                print("[FAIL] tensorflow.keras is missing! (Common in TF 2.16+ without tf_keras)")
+                print("Suggestion: pip install tensorflow==2.15.0")
+            else:
+                print(f"[OK] tf.keras is available (TF {tf.__version__})")
+        except ImportError:
+            pass
     else:
         print("\nMissing dependencies. Please run: pip install -r requirements.txt")
 

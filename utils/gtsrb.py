@@ -53,6 +53,9 @@ def _load_train_split(paths: GTSRBPaths) -> Tuple[List[Path], List[int]]:
         # Columns typically include Filename and ClassId
         for _, row in df.iterrows():
             rel = str(row["Filename"])
+            # Assuming row["Filename"] ends with .ppm, swap it to .jpg
+            if rel.lower().endswith('.ppm'):
+                rel = rel[:-4] + '.jpg'
             img_path = class_dir / rel
             img_paths.append(img_path)
             labels.append(int(row["ClassId"]))
@@ -74,7 +77,10 @@ def _load_test_split(paths: GTSRBPaths) -> Tuple[List[Path], List[int]]:
     img_paths: List[Path] = []
     labels: List[int] = []
     for _, row in df.iterrows():
-        img_path = paths.test_images_root / str(row["Filename"])
+        rel = str(row["Filename"])
+        if rel.lower().endswith('.ppm'):
+            rel = rel[:-4] + '.jpg'
+        img_path = paths.test_images_root / rel
         img_paths.append(img_path)
         labels.append(int(row["ClassId"]))
 

@@ -1,0 +1,735 @@
+Loading model from D:\traffic sign classifier\artifacts\cnn\model.keras...
+Starting verification for 43 classes...
+
+Testing Class 0: Speed limit (20km/h)
+[SUCCESS] Image: 00002_00000.ppm
+  Expected: Speed limit (20km/h) (0)
+  Predicted: Speed limit (20km/h) (0)
+  Confidence: 70.60%
+------------------------------
+[SUCCESS] Image: 00002_00016.ppm
+  Expected: Speed limit (20km/h) (0)
+  Predicted: Speed limit (20km/h) (0)
+  Confidence: 88.59%
+------------------------------
+[SUCCESS] Image: 00002_00010.ppm
+  Expected: Speed limit (20km/h) (0)
+  Predicted: Speed limit (20km/h) (0)
+  Confidence: 98.87%
+------------------------------
+
+Testing Class 1: Speed limit (30km/h)
+[SUCCESS] Image: 00027_00027.ppm
+  Expected: Speed limit (30km/h) (1)
+  Predicted: Speed limit (30km/h) (1)
+  Confidence: 100.00%
+------------------------------
+[SUCCESS] Image: 00042_00016.ppm
+  Expected: Speed limit (30km/h) (1)
+  Predicted: Speed limit (30km/h) (1)
+  Confidence: 100.00%
+------------------------------
+[SUCCESS] Image: 00034_00004.ppm
+  Expected: Speed limit (30km/h) (1)
+  Predicted: Speed limit (30km/h) (1)
+  Confidence: 99.41%
+------------------------------
+
+Testing Class 2: Speed limit (50km/h)
+[SUCCESS] Image: 00070_00007.ppm
+  Expected: Speed limit (50km/h) (2)
+  Predicted: Speed limit (50km/h) (2)
+  Confidence: 99.99%
+------------------------------
+[SUCCESS] Image: 00067_00009.ppm
+  Expected: Speed limit (50km/h) (2)
+  Predicted: Speed limit (50km/h) (2)
+  Confidence: 94.69%
+------------------------------
+[SUCCESS] Image: 00063_00020.ppm
+  Expected: Speed limit (50km/h) (2)
+  Predicted: Speed limit (50km/h) (2)
+  Confidence: 99.98%
+------------------------------
+
+Testing Class 3: Speed limit (60km/h)
+[SUCCESS] Image: 00005_00013.ppm
+  Expected: Speed limit (60km/h) (3)
+  Predicted: Speed limit (60km/h) (3)
+  Confidence: 99.98%
+------------------------------
+[SUCCESS] Image: 00023_00024.ppm
+  Expected: Speed limit (60km/h) (3)
+  Predicted: Speed limit (60km/h) (3)
+  Confidence: 99.98%
+------------------------------
+[SUCCESS] Image: 00004_00013.ppm
+  Expected: Speed limit (60km/h) (3)
+  Predicted: Speed limit (60km/h) (3)
+  Confidence: 100.00%
+------------------------------
+
+Testing Class 4: Speed limit (70km/h)
+[SUCCESS] Image: 00011_00014.ppm
+  Expected: Speed limit (70km/h) (4)
+  Predicted: Speed limit (70km/h) (4)
+  Confidence: 100.00%
+------------------------------
+[SUCCESS] Image: 00011_00011.ppm
+  Expected: Speed limit (70km/h) (4)
+  Predicted: Speed limit (70km/h) (4)
+  Confidence: 100.00%
+------------------------------
+[SUCCESS] Image: 00055_00013.ppm
+  Expected: Speed limit (70km/h) (4)
+  Predicted: Speed limit (70km/h) (4)
+  Confidence: 99.99%
+------------------------------
+
+Testing Class 5: Speed limit (80km/h)
+[SUCCESS] Image: 00034_00021.ppm
+  Expected: Speed limit (80km/h) (5)
+  Predicted: Speed limit (80km/h) (5)
+  Confidence: 99.69%
+------------------------------
+[SUCCESS] Image: 00018_00012.ppm
+  Expected: Speed limit (80km/h) (5)
+  Predicted: Speed limit (80km/h) (5)
+  Confidence: 94.79%
+------------------------------
+[SUCCESS] Image: 00049_00010.ppm
+  Expected: Speed limit (80km/h) (5)
+  Predicted: Speed limit (80km/h) (5)
+  Confidence: 98.11%
+------------------------------
+
+Testing Class 6: End of speed limit (80km/h)
+[SUCCESS] Image: 00009_00026.ppm
+  Expected: End of speed limit (80km/h) (6)
+  Predicted: End of speed limit (80km/h) (6)
+  Confidence: 99.83%
+------------------------------
+[SUCCESS] Image: 00005_00021.ppm
+  Expected: End of speed limit (80km/h) (6)
+  Predicted: End of speed limit (80km/h) (6)
+  Confidence: 100.00%
+------------------------------
+[SUCCESS] Image: 00000_00004.ppm
+  Expected: End of speed limit (80km/h) (6)
+  Predicted: End of speed limit (80km/h) (6)
+  Confidence: 99.87%
+------------------------------
+
+Testing Class 7: Speed limit (100km/h)
+[SUCCESS] Image: 00042_00017.ppm
+  Expected: Speed limit (100km/h) (7)
+  Predicted: Speed limit (100km/h) (7)
+  Confidence: 100.00%
+------------------------------
+[SUCCESS] Image: 00046_00008.ppm
+  Expected: Speed limit (100km/h) (7)
+  Predicted: Speed limit (100km/h) (7)
+  Confidence: 99.43%
+------------------------------
+[SUCCESS] Image: 00002_00001.ppm
+  Expected: Speed limit (100km/h) (7)
+  Predicted: Speed limit (100km/h) (7)
+  Confidence: 98.85%
+------------------------------
+
+Testing Class 8: Speed limit (120km/h)
+[SUCCESS] Image: 00031_00021.ppm
+  Expected: Speed limit (120km/h) (8)
+  Predicted: Speed limit (120km/h) (8)
+  Confidence: 99.91%
+------------------------------
+[SUCCESS] Image: 00012_00023.ppm
+  Expected: Speed limit (120km/h) (8)
+  Predicted: Speed limit (120km/h) (8)
+  Confidence: 99.81%
+------------------------------
+[SUCCESS] Image: 00001_00021.ppm
+  Expected: Speed limit (120km/h) (8)
+  Predicted: Speed limit (120km/h) (8)
+  Confidence: 100.00%
+------------------------------
+
+Testing Class 9: No passing
+[SUCCESS] Image: 00044_00006.ppm
+  Expected: No passing (9)
+  Predicted: No passing (9)
+  Confidence: 100.00%
+------------------------------
+[SUCCESS] Image: 00002_00001.ppm
+  Expected: No passing (9)
+  Predicted: No passing (9)
+  Confidence: 100.00%
+------------------------------
+[SUCCESS] Image: 00019_00020.ppm
+  Expected: No passing (9)
+  Predicted: No passing (9)
+  Confidence: 100.00%
+------------------------------
+
+Testing Class 10: No passing for vehicles over 3.5 metric tons
+[SUCCESS] Image: 00058_00017.ppm
+  Expected: No passing for vehicles over 3.5 metric tons (10)
+  Predicted: No passing for vehicles over 3.5 metric tons (10)
+  Confidence: 100.00%
+------------------------------
+[SUCCESS] Image: 00048_00029.ppm
+  Expected: No passing for vehicles over 3.5 metric tons (10)
+  Predicted: No passing for vehicles over 3.5 metric tons (10)
+  Confidence: 99.99%
+------------------------------
+[SUCCESS] Image: 00014_00025.ppm
+  Expected: No passing for vehicles over 3.5 metric tons (10)
+  Predicted: No passing for vehicles over 3.5 metric tons (10)
+  Confidence: 100.00%
+------------------------------
+
+Testing Class 11: Right-of-way at the next intersection
+[SUCCESS] Image: 00022_00001.ppm
+  Expected: Right-of-way at the next intersection (11)
+  Predicted: Right-of-way at the next intersection (11)
+  Confidence: 99.95%
+------------------------------
+[SUCCESS] Image: 00003_00025.ppm
+  Expected: Right-of-way at the next intersection (11)
+  Predicted: Right-of-way at the next intersection (11)
+  Confidence: 100.00%
+------------------------------
+[SUCCESS] Image: 00039_00025.ppm
+  Expected: Right-of-way at the next intersection (11)
+  Predicted: Right-of-way at the next intersection (11)
+  Confidence: 99.59%
+------------------------------
+
+Testing Class 12: Priority road
+[SUCCESS] Image: 00004_00005.ppm
+  Expected: Priority road (12)
+  Predicted: Priority road (12)
+  Confidence: 100.00%
+------------------------------
+[SUCCESS] Image: 00021_00028.ppm
+  Expected: Priority road (12)
+  Predicted: Priority road (12)
+  Confidence: 100.00%
+------------------------------
+[SUCCESS] Image: 00043_00006.ppm
+  Expected: Priority road (12)
+  Predicted: Priority road (12)
+  Confidence: 100.00%
+------------------------------
+
+Testing Class 13: Yield
+[SUCCESS] Image: 00032_00008.ppm
+  Expected: Yield (13)
+  Predicted: Yield (13)
+  Confidence: 100.00%
+------------------------------
+[SUCCESS] Image: 00052_00023.ppm
+  Expected: Yield (13)
+  Predicted: Yield (13)
+  Confidence: 100.00%
+------------------------------
+[SUCCESS] Image: 00032_00023.ppm
+  Expected: Yield (13)
+  Predicted: Yield (13)
+  Confidence: 100.00%
+------------------------------
+
+Testing Class 14: Stop
+[SUCCESS] Image: 00019_00017.ppm
+  Expected: Stop (14)
+  Predicted: Stop (14)
+  Confidence: 99.98%
+------------------------------
+[SUCCESS] Image: 00013_00028.ppm
+  Expected: Stop (14)
+  Predicted: Stop (14)
+  Confidence: 100.00%
+------------------------------
+[SUCCESS] Image: 00008_00025.ppm
+  Expected: Stop (14)
+  Predicted: Stop (14)
+  Confidence: 99.98%
+------------------------------
+
+Testing Class 15: No vehicles
+[SUCCESS] Image: 00004_00020.ppm
+  Expected: No vehicles (15)
+  Predicted: No vehicles (15)
+  Confidence: 99.95%
+------------------------------
+[SUCCESS] Image: 00013_00019.ppm
+  Expected: No vehicles (15)
+  Predicted: No vehicles (15)
+  Confidence: 100.00%
+------------------------------
+[SUCCESS] Image: 00016_00010.ppm
+  Expected: No vehicles (15)
+  Predicted: No vehicles (15)
+  Confidence: 100.00%
+------------------------------
+
+Testing Class 16: Vehicles over 3.5 metric tons prohibited
+[SUCCESS] Image: 00013_00014.ppm
+  Expected: Vehicles over 3.5 metric tons prohibited (16)
+  Predicted: Vehicles over 3.5 metric tons prohibited (16)
+  Confidence: 100.00%
+------------------------------
+[SUCCESS] Image: 00010_00008.ppm
+  Expected: Vehicles over 3.5 metric tons prohibited (16)
+  Predicted: Vehicles over 3.5 metric tons prohibited (16)
+  Confidence: 99.99%
+------------------------------
+[SUCCESS] Image: 00003_00013.ppm
+  Expected: Vehicles over 3.5 metric tons prohibited (16)
+  Predicted: Vehicles over 3.5 metric tons prohibited (16)
+  Confidence: 99.89%
+------------------------------
+
+Testing Class 17: No entry
+[SUCCESS] Image: 00022_00000.ppm
+  Expected: No entry (17)
+  Predicted: No entry (17)
+  Confidence: 99.93%
+------------------------------
+[SUCCESS] Image: 00004_00009.ppm
+  Expected: No entry (17)
+  Predicted: No entry (17)
+  Confidence: 100.00%
+------------------------------
+[SUCCESS] Image: 00001_00029.ppm
+  Expected: No entry (17)
+  Predicted: No entry (17)
+  Confidence: 100.00%
+------------------------------
+
+Testing Class 18: General caution
+[SUCCESS] Image: 00024_00020.ppm
+  Expected: General caution (18)
+  Predicted: General caution (18)
+  Confidence: 99.88%
+------------------------------
+[SUCCESS] Image: 00005_00022.ppm
+  Expected: General caution (18)
+  Predicted: General caution (18)
+  Confidence: 100.00%
+------------------------------
+[SUCCESS] Image: 00032_00029.ppm
+  Expected: General caution (18)
+  Predicted: General caution (18)
+  Confidence: 99.85%
+------------------------------
+
+Testing Class 19: Dangerous curve to the left
+[SUCCESS] Image: 00005_00004.ppm
+  Expected: Dangerous curve to the left (19)
+  Predicted: Dangerous curve to the left (19)
+  Confidence: 99.13%
+------------------------------
+[SUCCESS] Image: 00004_00017.ppm
+  Expected: Dangerous curve to the left (19)
+  Predicted: Dangerous curve to the left (19)
+  Confidence: 94.87%
+------------------------------
+[SUCCESS] Image: 00005_00020.ppm
+  Expected: Dangerous curve to the left (19)
+  Predicted: Dangerous curve to the left (19)
+  Confidence: 100.00%
+------------------------------
+
+Testing Class 20: Dangerous curve to the right
+[SUCCESS] Image: 00010_00017.ppm
+  Expected: Dangerous curve to the right (20)
+  Predicted: Dangerous curve to the right (20)
+  Confidence: 100.00%
+------------------------------
+[SUCCESS] Image: 00006_00025.ppm
+  Expected: Dangerous curve to the right (20)
+  Predicted: Dangerous curve to the right (20)
+  Confidence: 99.99%
+------------------------------
+[SUCCESS] Image: 00010_00005.ppm
+  Expected: Dangerous curve to the right (20)
+  Predicted: Dangerous curve to the right (20)
+  Confidence: 99.93%
+------------------------------
+
+Testing Class 21: Double curve
+[SUCCESS] Image: 00009_00021.ppm
+  Expected: Double curve (21)
+  Predicted: Double curve (21)
+  Confidence: 99.88%
+------------------------------
+[SUCCESS] Image: 00002_00023.ppm
+  Expected: Double curve (21)
+  Predicted: Double curve (21)
+  Confidence: 99.88%
+------------------------------
+[SUCCESS] Image: 00004_00026.ppm
+  Expected: Double curve (21)
+  Predicted: Double curve (21)
+  Confidence: 100.00%
+------------------------------
+
+Testing Class 22: Bumpy road
+[SUCCESS] Image: 00010_00014.ppm
+  Expected: Bumpy road (22)
+  Predicted: Bumpy road (22)
+  Confidence: 100.00%
+------------------------------
+[SUCCESS] Image: 00006_00027.ppm
+  Expected: Bumpy road (22)
+  Predicted: Bumpy road (22)
+  Confidence: 100.00%
+------------------------------
+[SUCCESS] Image: 00001_00021.ppm
+  Expected: Bumpy road (22)
+  Predicted: Bumpy road (22)
+  Confidence: 99.98%
+------------------------------
+
+Testing Class 23: Slippery road
+[SUCCESS] Image: 00008_00018.ppm
+  Expected: Slippery road (23)
+  Predicted: Slippery road (23)
+  Confidence: 99.74%
+------------------------------
+[SUCCESS] Image: 00013_00001.ppm
+  Expected: Slippery road (23)
+  Predicted: Slippery road (23)
+  Confidence: 74.63%
+------------------------------
+[SUCCESS] Image: 00003_00028.ppm
+  Expected: Slippery road (23)
+  Predicted: Slippery road (23)
+  Confidence: 84.38%
+------------------------------
+
+Testing Class 24: Road narrows on the right
+[SUCCESS] Image: 00001_00011.ppm
+  Expected: Road narrows on the right (24)
+  Predicted: Road narrows on the right (24)
+  Confidence: 100.00%
+------------------------------
+[SUCCESS] Image: 00005_00002.ppm
+  Expected: Road narrows on the right (24)
+  Predicted: Road narrows on the right (24)
+  Confidence: 99.94%
+------------------------------
+[SUCCESS] Image: 00006_00018.ppm
+  Expected: Road narrows on the right (24)
+  Predicted: Road narrows on the right (24)
+  Confidence: 100.00%
+------------------------------
+
+Testing Class 25: Road work
+[SUCCESS] Image: 00048_00021.ppm
+  Expected: Road work (25)
+  Predicted: Road work (25)
+  Confidence: 100.00%
+------------------------------
+[SUCCESS] Image: 00006_00021.ppm
+  Expected: Road work (25)
+  Predicted: Road work (25)
+  Confidence: 100.00%
+------------------------------
+[SUCCESS] Image: 00049_00027.ppm
+  Expected: Road work (25)
+  Predicted: Road work (25)
+  Confidence: 100.00%
+------------------------------
+
+Testing Class 26: Traffic signals
+[SUCCESS] Image: 00014_00020.ppm
+  Expected: Traffic signals (26)
+  Predicted: Traffic signals (26)
+  Confidence: 100.00%
+------------------------------
+[SUCCESS] Image: 00016_00025.ppm
+  Expected: Traffic signals (26)
+  Predicted: Traffic signals (26)
+  Confidence: 99.95%
+------------------------------
+[SUCCESS] Image: 00005_00016.ppm
+  Expected: Traffic signals (26)
+  Predicted: Traffic signals (26)
+  Confidence: 99.20%
+------------------------------
+
+Testing Class 27: Pedestrians
+[SUCCESS] Image: 00005_00013.ppm
+  Expected: Pedestrians (27)
+  Predicted: Pedestrians (27)
+  Confidence: 99.70%
+------------------------------
+[SUCCESS] Image: 00006_00021.ppm
+  Expected: Pedestrians (27)
+  Predicted: Pedestrians (27)
+  Confidence: 99.81%
+------------------------------
+[SUCCESS] Image: 00002_00001.ppm
+  Expected: Pedestrians (27)
+  Predicted: Pedestrians (27)
+  Confidence: 99.97%
+------------------------------
+
+Testing Class 28: Children crossing
+[SUCCESS] Image: 00015_00023.ppm
+  Expected: Children crossing (28)
+  Predicted: Children crossing (28)
+  Confidence: 99.98%
+------------------------------
+[SUCCESS] Image: 00017_00022.ppm
+  Expected: Children crossing (28)
+  Predicted: Children crossing (28)
+  Confidence: 99.99%
+------------------------------
+[SUCCESS] Image: 00005_00017.ppm
+  Expected: Children crossing (28)
+  Predicted: Children crossing (28)
+  Confidence: 98.86%
+------------------------------
+
+Testing Class 29: Bicycles crossing
+[SUCCESS] Image: 00003_00023.ppm
+  Expected: Bicycles crossing (29)
+  Predicted: Bicycles crossing (29)
+  Confidence: 100.00%
+------------------------------
+[SUCCESS] Image: 00003_00022.ppm
+  Expected: Bicycles crossing (29)
+  Predicted: Bicycles crossing (29)
+  Confidence: 99.99%
+------------------------------
+[SUCCESS] Image: 00007_00023.ppm
+  Expected: Bicycles crossing (29)
+  Predicted: Bicycles crossing (29)
+  Confidence: 100.00%
+------------------------------
+
+Testing Class 30: Beware of ice/snow
+[SUCCESS] Image: 00003_00022.ppm
+  Expected: Beware of ice/snow (30)
+  Predicted: Beware of ice/snow (30)
+  Confidence: 99.76%
+------------------------------
+[SUCCESS] Image: 00008_00020.ppm
+  Expected: Beware of ice/snow (30)
+  Predicted: Beware of ice/snow (30)
+  Confidence: 99.99%
+------------------------------
+[SUCCESS] Image: 00012_00002.ppm
+  Expected: Beware of ice/snow (30)
+  Predicted: Beware of ice/snow (30)
+  Confidence: 42.57%
+------------------------------
+
+Testing Class 31: Wild animals crossing
+[SUCCESS] Image: 00003_00006.ppm
+  Expected: Wild animals crossing (31)
+  Predicted: Wild animals crossing (31)
+  Confidence: 99.85%
+------------------------------
+[SUCCESS] Image: 00021_00013.ppm
+  Expected: Wild animals crossing (31)
+  Predicted: Wild animals crossing (31)
+  Confidence: 98.65%
+------------------------------
+[SUCCESS] Image: 00011_00023.ppm
+  Expected: Wild animals crossing (31)
+  Predicted: Wild animals crossing (31)
+  Confidence: 98.18%
+------------------------------
+
+Testing Class 32: End of all speed and passing limits
+[SUCCESS] Image: 00001_00005.ppm
+  Expected: End of all speed and passing limits (32)
+  Predicted: End of all speed and passing limits (32)
+  Confidence: 99.97%
+------------------------------
+[SUCCESS] Image: 00005_00004.ppm
+  Expected: End of all speed and passing limits (32)
+  Predicted: End of all speed and passing limits (32)
+  Confidence: 95.18%
+------------------------------
+[SUCCESS] Image: 00001_00012.ppm
+  Expected: End of all speed and passing limits (32)
+  Predicted: End of all speed and passing limits (32)
+  Confidence: 99.99%
+------------------------------
+
+Testing Class 33: Turn right ahead
+[SUCCESS] Image: 00002_00003.ppm
+  Expected: Turn right ahead (33)
+  Predicted: Turn right ahead (33)
+  Confidence: 100.00%
+------------------------------
+[SUCCESS] Image: 00010_00019.ppm
+  Expected: Turn right ahead (33)
+  Predicted: Turn right ahead (33)
+  Confidence: 100.00%
+------------------------------
+[SUCCESS] Image: 00000_00017.ppm
+  Expected: Turn right ahead (33)
+  Predicted: Turn right ahead (33)
+  Confidence: 99.82%
+------------------------------
+
+Testing Class 34: Turn left ahead
+[SUCCESS] Image: 00003_00013.ppm
+  Expected: Turn left ahead (34)
+  Predicted: Turn left ahead (34)
+  Confidence: 100.00%
+------------------------------
+[SUCCESS] Image: 00006_00005.ppm
+  Expected: Turn left ahead (34)
+  Predicted: Turn left ahead (34)
+  Confidence: 99.99%
+------------------------------
+[SUCCESS] Image: 00009_00013.ppm
+  Expected: Turn left ahead (34)
+  Predicted: Turn left ahead (34)
+  Confidence: 99.99%
+------------------------------
+
+Testing Class 35: Ahead only
+[SUCCESS] Image: 00036_00014.ppm
+  Expected: Ahead only (35)
+  Predicted: Ahead only (35)
+  Confidence: 100.00%
+------------------------------
+[SUCCESS] Image: 00019_00014.ppm
+  Expected: Ahead only (35)
+  Predicted: Ahead only (35)
+  Confidence: 100.00%
+------------------------------
+[SUCCESS] Image: 00005_00007.ppm
+  Expected: Ahead only (35)
+  Predicted: Ahead only (35)
+  Confidence: 100.00%
+------------------------------
+
+Testing Class 36: Go straight or right
+[SUCCESS] Image: 00002_00028.ppm
+  Expected: Go straight or right (36)
+  Predicted: Go straight or right (36)
+  Confidence: 100.00%
+------------------------------
+[SUCCESS] Image: 00007_00018.ppm
+  Expected: Go straight or right (36)
+  Predicted: Go straight or right (36)
+  Confidence: 99.31%
+------------------------------
+[SUCCESS] Image: 00006_00008.ppm
+  Expected: Go straight or right (36)
+  Predicted: Go straight or right (36)
+  Confidence: 99.52%
+------------------------------
+
+Testing Class 37: Go straight or left
+[SUCCESS] Image: 00000_00027.ppm
+  Expected: Go straight or left (37)
+  Predicted: Go straight or left (37)
+  Confidence: 100.00%
+------------------------------
+[SUCCESS] Image: 00003_00022.ppm
+  Expected: Go straight or left (37)
+  Predicted: Go straight or left (37)
+  Confidence: 98.65%
+------------------------------
+[SUCCESS] Image: 00004_00024.ppm
+  Expected: Go straight or left (37)
+  Predicted: Go straight or left (37)
+  Confidence: 100.00%
+------------------------------
+
+Testing Class 38: Keep right
+[SUCCESS] Image: 00032_00024.ppm
+  Expected: Keep right (38)
+  Predicted: Keep right (38)
+  Confidence: 99.97%
+------------------------------
+[SUCCESS] Image: 00039_00022.ppm
+  Expected: Keep right (38)
+  Predicted: Keep right (38)
+  Confidence: 99.95%
+------------------------------
+[SUCCESS] Image: 00048_00003.ppm
+  Expected: Keep right (38)
+  Predicted: Keep right (38)
+  Confidence: 99.93%
+------------------------------
+
+Testing Class 39: Keep left
+[SUCCESS] Image: 00005_00017.ppm
+  Expected: Keep left (39)
+  Predicted: Keep left (39)
+  Confidence: 99.98%
+------------------------------
+[SUCCESS] Image: 00002_00006.ppm
+  Expected: Keep left (39)
+  Predicted: Keep left (39)
+  Confidence: 100.00%
+------------------------------
+[SUCCESS] Image: 00009_00006.ppm
+  Expected: Keep left (39)
+  Predicted: Keep left (39)
+  Confidence: 99.63%
+------------------------------
+
+Testing Class 40: Roundabout mandatory
+[SUCCESS] Image: 00002_00022.ppm
+  Expected: Roundabout mandatory (40)
+  Predicted: Roundabout mandatory (40)
+  Confidence: 100.00%
+------------------------------
+[SUCCESS] Image: 00001_00010.ppm
+  Expected: Roundabout mandatory (40)
+  Predicted: Roundabout mandatory (40)
+  Confidence: 100.00%
+------------------------------
+[SUCCESS] Image: 00001_00028.ppm
+  Expected: Roundabout mandatory (40)
+  Predicted: Roundabout mandatory (40)
+  Confidence: 100.00%
+------------------------------
+
+Testing Class 41: End of no passing
+[SUCCESS] Image: 00003_00022.ppm
+  Expected: End of no passing (41)
+  Predicted: End of no passing (41)
+  Confidence: 98.65%
+------------------------------
+[SUCCESS] Image: 00003_00004.ppm
+  Expected: End of no passing (41)
+  Predicted: End of no passing (41)
+  Confidence: 99.99%
+------------------------------
+[SUCCESS] Image: 00005_00011.ppm
+  Expected: End of no passing (41)
+  Predicted: End of no passing (41)
+  Confidence: 99.49%
+------------------------------
+
+Testing Class 42: End of no passing by vehicles over 3.5 metric tons
+[SUCCESS] Image: 00003_00027.ppm
+  Expected: End of no passing by vehicles over 3.5 metric tons (42)
+  Predicted: End of no passing by vehicles over 3.5 metric tons (42)
+  Confidence: 99.70%
+------------------------------
+[SUCCESS] Image: 00000_00029.ppm
+  Expected: End of no passing by vehicles over 3.5 metric tons (42)
+  Predicted: End of no passing by vehicles over 3.5 metric tons (42)
+  Confidence: 99.88%
+------------------------------
+[SUCCESS] Image: 00004_00009.ppm
+  Expected: End of no passing by vehicles over 3.5 metric tons (42)
+  Predicted: End of no passing by vehicles over 3.5 metric tons (42)
+  Confidence: 99.99%
+------------------------------
+
+Total Result: 129/129 Passed

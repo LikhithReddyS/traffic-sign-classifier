@@ -1,0 +1,25 @@
+.venv/
+__pycache__/
+*.py[cod]
+
+# Model files (usually large)
+*.h5
+*.keras
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Dataset images (download separately; too large for a normal git repo)
+dataset/**/Images/
+dataset/**/*.ppm
+dataset/**/*.jpg
+dataset/**/*.jpeg
+dataset/**/*.png
+
+# Large binary docs
+*.pptx

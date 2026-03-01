@@ -83,10 +83,10 @@ for class_id in range(43):
         print(f"[SKIP] Class {class_id}: folder not found")
         continue
 
-    # Find the first PPM image
-    images = sorted(class_dir.glob("*.ppm"))
+    # Find the first JPG image
+    images = sorted(class_dir.glob("*.jpg"))
     if not images:
-        print(f"[SKIP] Class {class_id}: no PPM images")
+        print(f"[SKIP] Class {class_id}: no JPG images")
         continue
 
     # Pick a sample from the middle (usually better quality/size)

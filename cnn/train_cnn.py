@@ -7,6 +7,12 @@ from typing import Tuple
 
 import numpy as np
 import tensorflow as tf
+
+try:
+    import keras
+except ImportError:
+    from tensorflow import keras
+
 from sklearn.model_selection import train_test_split
 
 from cnn.model import build_cnn
@@ -16,32 +22,6 @@ from utils.gtsrb import class_distribution, load_gtsrb_numpy
 from utils.image_ops import preprocess_image, read_image_rgb
 from utils.seed import seed_everything
 
-
-def _load_synthetic(paths: Paths) -> Tuple[np.ndarray, np.ndarray]:
-    syn_root = paths.synthetic_dir
-    if not syn_root.exists():
-        return np.empty((0, IMG_SIZE, IMG_SIZE, 3), dtype=np.float32), np.empty((0,), dtype=np.int64)
-
-    Xs = []
-    ys = []
-
-    for class_dir in sorted([p for p in syn_root.iterdir() if p.is_dir()]):
-        # class folder name: class_XX
-        try:
-            class_id = int(class_dir.name.split("_")[1])
-        except Exception:
-            continue
-
-        for img_path in class_dir.glob("*.png"):
-            img = read_image_rgb(img_path)
-            img = preprocess_image(img, size=IMG_SIZE)
-            Xs.append(img)
-            ys.append(class_id)
-
-    if not Xs:
-        return np.empty((0, IMG_SIZE, IMG_SIZE, 3), dtype=np.float32), np.empty((0,), dtype=np.int64)
-
-    return np.stack(Xs).astype(np.float32), np.array(ys, dtype=np.int64)
 
 
 def _make_dataset(X: np.ndarray, y: np.ndarray, batch_size: int, training: bool) -> tf.data.Dataset:
@@ -67,9 +47,9 @@ def _make_dataset(X: np.ndarray, y: np.ndarray, batch_size: int, training: bool)
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Train CNN on real + GAN-generated synthetic images.")
+    parser = argparse.ArgumentParser(description="Train CNN on real images.")
     parser.add_argument("--dataset_root", type=str, default=None, help="Path to dataset root (contains train/ and test/)")
-    parser.add_argument("--epochs", type=int, default=20)
+    parser.add_argument("--epochs", type=int, default=30)
     parser.add_argument("--batch_size", type=int, default=128)
     parser.add_argument("--seed", type=int, default=42)
     args = parser.parse_args()
@@ -97,15 +77,7 @@ def main() -> None:
     max_count = max(dist.values())
     print(f"Train split class counts: min={min_count}, max={max_count}")
 
-    X_syn, y_syn = _load_synthetic(paths)
-
-    if len(X_syn) > 0:
-        X_tr = np.concatenate([X_tr_real, X_syn], axis=0)
-        y_tr = np.concatenate([y_tr_real, y_syn], axis=0)
-        print(f"Loaded synthetic: {len(X_syn)} images")
-    else:
-        X_tr, y_tr = X_tr_real, y_tr_real
-        print("No synthetic images found; training on real only.")
+    X_tr, y_tr = X_tr_real, y_tr_real
 
     model = build_cnn(num_classes=NUM_CLASSES, img_size=IMG_SIZE)
 
@@ -114,15 +86,25 @@ def main() -> None:
 
     paths.cnn_dir.mkdir(parents=True, exist_ok=True)
     model_path = paths.cnn_dir / "model.keras"
+    weights_path = paths.cnn_dir / "model.weights.h5"
 
     callbacks = [
-        tf.keras.callbacks.ModelCheckpoint(filepath=str(model_path), monitor="val_accuracy", save_best_only=True),
-        tf.keras.callbacks.EarlyStopping(monitor="val_accuracy", patience=4, restore_best_weights=True),
+        # Best portable artifact: weights-only.
+        keras.callbacks.ModelCheckpoint(
+            filepath=str(weights_path),
+            monitor="val_accuracy",
+            save_best_only=True,
+            save_weights_only=True,
+        ),
+        # Also save a full model for environments that can load it.
+        keras.callbacks.ModelCheckpoint(filepath=str(model_path), monitor="val_accuracy", save_best_only=True),
+        keras.callbacks.EarlyStopping(monitor="val_accuracy", patience=4, restore_best_weights=True),
     ]
 
     history = model.fit(train_ds, validation_data=val_ds, epochs=args.epochs, callbacks=callbacks)
 
     model.save(model_path)
+    model.save_weights(weights_path)
 
     with open(paths.cnn_dir / "train_history.json", "w", encoding="utf-8") as f:
         json.dump(history.history, f, indent=2)
@@ -132,7 +114,6 @@ def main() -> None:
         "train_real": int(len(X_tr_real)),
         "val_real": int(len(X_val_real)),
         "test_real": int(len(X_test)),
-        "synthetic": int(len(X_syn)),
         "seed": int(args.seed),
         "val_fraction": 0.15,
         "note": "Validation split is drawn from official training set. Official test split is reserved for final evaluation.",
@@ -141,6 +122,7 @@ def main() -> None:
         json.dump(split_info, f, indent=2)
 
     print(f"Saved CNN model to: {model_path}")
+    print(f"Saved CNN weights to: {weights_path}")
 
 
 if __name__ == "__main__":

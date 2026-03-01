@@ -1,0 +1,8 @@
+{
+  "train_real": 33327,
+  "val_real": 5882,
+  "test_real": 12630,
+  "seed": 42,
+  "val_fraction": 0.15,
+  "note": "Validation split is drawn from official training set. Official test split is reserved for final evaluation."
+}

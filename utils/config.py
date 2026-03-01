@@ -22,10 +22,6 @@ class Paths:
         return self.artifacts_dir / "cnn"
 
     @property
-    def gan_dir(self) -> Path:
-        return self.artifacts_dir / "gan"
-
-    @property
     def synthetic_dir(self) -> Path:
         return self.dataset_root / "synthetic"
 

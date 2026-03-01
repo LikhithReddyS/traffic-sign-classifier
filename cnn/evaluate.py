@@ -6,16 +6,48 @@ from pathlib import Path
 
 import numpy as np
 import tensorflow as tf
+try:
+    import keras
+except ImportError:
+    from tensorflow import keras
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 
+from cnn.model import build_cnn, build_cnn_legacy
 from utils.config import Paths
 from utils.gtsrb import load_gtsrb_numpy
+
+
+def _load_model_any(model_path: Path):
+    """Load either a full serialized model or a weights-only artifact.
+
+    We prefer `load_model` when possible, but fall back to rebuilding the
+    architecture and calling `load_weights` (handles `*.weights.h5` and legacy H5).
+    """
+    try:
+        return keras.models.load_model(model_path, compile=False)
+    except Exception:
+        pass
+
+    for builder in (build_cnn, build_cnn_legacy):
+        model = builder()
+        try:
+            model.load_weights(str(model_path))
+            return model
+        except Exception:
+            continue
+
+    raise RuntimeError(f"Could not load model from: {model_path}")
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Evaluate trained CNN on GTSRB test set.")
     parser.add_argument("--dataset_root", type=str, default=None, help="Path to dataset root (contains train/ and test/)")
-    parser.add_argument("--model_path", type=str, default=None, help="Path to saved model.keras")
+    parser.add_argument(
+        "--model_path",
+        type=str,
+        default=None,
+        help="Path to model artifact (preferred: model.weights.h5; also supports model.h5/model.keras)",
+    )
     args = parser.parse_args()
 
     project_root = Path(__file__).resolve().parents[1]
@@ -29,7 +61,7 @@ def main() -> None:
 
     X_test, y_test = load_gtsrb_numpy(dataset_root, split="test")
 
-    model = tf.keras.models.load_model(model_path)
+    model = _load_model_any(model_path)
     probs = model.predict(X_test, batch_size=256, verbose=1)
     y_pred = np.argmax(probs, axis=1)
 
