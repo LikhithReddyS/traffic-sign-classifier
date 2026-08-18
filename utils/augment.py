@@ -6,35 +6,31 @@ import numpy as np
 import cv2
 import random
 
-def random_affine(img: np.ndarray, 
-                  rotation_range: float = 10.0, 
-                  translate_range: float = 0.1, 
+def random_affine(img: np.ndarray,
+                  translate_range: float = 0.1,
                   zoom_range: float = 0.1) -> np.ndarray:
-    """Applies random affine transformation (rotation, shift, zoom)."""
+    """Applies random affine transformation (shift, zoom only -- NO rotation).
+
+    Rotation is intentionally excluded: it is not semantics-preserving for
+    directional traffic signs (e.g. turn-left/turn-right, keep-left/keep-right).
+    """
     h, w = img.shape[:2]
-    
-    # Rotation
-    angle = np.random.uniform(-rotation_range, rotation_range)
-    
+
     # Translation
     tx = np.random.uniform(-translate_range, translate_range) * w
     ty = np.random.uniform(-translate_range, translate_range) * h
-    
+
     # Zoom
     zoom = np.random.uniform(1.0 - zoom_range, 1.0 + zoom_range)
-    
-    # Construct affine matrix
-    # 1. Center to origin
-    # 2. Rotate & Scale
-    # 3. Translate & Move back
-    
+
+    # Construct affine matrix (scale only, no rotation)
     center = (w // 2, h // 2)
-    M = cv2.getRotationMatrix2D(center, angle, zoom)
-    
+    M = cv2.getRotationMatrix2D(center, 0.0, zoom)
+
     # Add translation to the matrix
     M[0, 2] += tx
     M[1, 2] += ty
-    
+
     # Apply
     return cv2.warpAffine(img, M, (w, h), borderMode=cv2.BORDER_REFLECT_101)
 

@@ -28,8 +28,7 @@ def convert_ppm_to_jpg(dataset_path):
                         if converted_count % 1000 == 0:
                             print(f"Converted {converted_count} images...")
                     else:
-                        pr
-                        int(f"Failed to read: {ppm_path}")
+                        print(f"Failed to read: {ppm_path}")
                 except Exception as e:
                     print(f"Error converting {ppm_path}: {e}")
                     
